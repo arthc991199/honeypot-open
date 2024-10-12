@@ -1,0 +1,97 @@
+{
+    "sql_injection": [
+        "' OR '1'='1",
+        "\" OR \"1\"=\"1",
+        "--",
+        "SELECT",
+        "UNION SELECT",
+        "INSERT INTO",
+        "DROP TABLE",
+        "UPDATE",
+        "DELETE FROM",
+        "' OR 'a'='a",
+        "' OR '1'='1' --",
+        "' OR 1=1",
+        "' AND 1=1 --",
+        "1' AND 1=1",
+        "' OR 1=1 LIMIT 1 --"
+    ],
+    "xss": [
+        "<script>",
+        "alert(",
+        "<img src",
+        "<iframe>",
+        "<svg>",
+        "onload=",
+        "onerror=",
+        "javascript:",
+        "document.cookie",
+        "eval(",
+        "window.location"
+    ],
+    "rfi": [
+        "http://",
+        "https://",
+        "ftp://",
+        "file://",
+        "php://input",
+        "php://filter",
+        "data://text/plain"
+    ],
+    "lfi": [
+        "../etc/passwd",
+        "../../",
+        "../../../",
+        "/etc/shadow",
+        "/var/log/",
+        "/proc/self/environ",
+        "index.php?page=",
+        "file://"
+    ],
+    "path_traversal": [
+        "../",
+        "..\\",
+        "/etc/passwd",
+        "C:\\Windows\\System32",
+        "../../../",
+        "..%2F..%2F..%2F",
+        "..%252F",
+        "%2e%2e%2f"
+    ],
+    "command_injection": [
+        "|",
+        "&",
+        ";",
+        "`",
+        "$(",
+        "&&",
+        "||",
+        "$(whoami)",
+        "$(id)",
+        "$(uname -a)",
+        "cat /etc/passwd",
+        "ls -la"
+    ],
+    "sqli_boolean_based": [
+        "' OR 1=1 --",
+        "' AND 1=2 --",
+        "' OR 'x'='x",
+        "AND 1=1",
+        "OR '1'='1",
+        "' AND 'a'='a",
+        "' AND 'b'='b",
+        "' OR '1'='1' --"
+    ],
+    "sqli_union_based": [
+        "' UNION SELECT",
+        "UNION ALL SELECT",
+        "UNION SELECT NULL",
+        "UNION SELECT NULL,NULL",
+        "' UNION ALL SELECT 1,2,3 --",
+        "' UNION SELECT username, password FROM users --"
+    ],
+
+"pwned_password": [
+    "Hasło z wycieku"
+]
+}
